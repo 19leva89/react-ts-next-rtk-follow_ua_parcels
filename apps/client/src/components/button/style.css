@@ -1,0 +1,89 @@
+.button {
+	color: #fff;
+	background: #0055a4;
+	padding: 10px;
+	white-space: nowrap;
+	border-radius: 6px;
+	width: 100%;
+	cursor: pointer;
+	text-decoration: none;
+	transition: opacity 0.5s;
+}
+
+.button:hover {
+	opacity: 0.7;
+}
+
+.button:active {
+	opacity: 0.3;
+}
+
+.button--disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.button--disabled:hover,
+.button--disabled:active {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.header__btn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+}
+
+.button__primary {
+	border: 1px solid #0055a4;
+	text-decoration: none;
+}
+
+.button__primary:hover {
+	opacity: 0.7;
+}
+
+.button__transparent {
+	color: #343a40;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	text-decoration: none;
+}
+
+.button__transparent svg {
+	fill: #0055a4;
+	transition: fill 0s ease;
+}
+
+.button__transparent:hover {
+	background-color: #0055a4;
+	border-color: #0055a4;
+	color: #fff;
+	opacity: 0.7;
+}
+
+.button__transparent:hover svg {
+	fill: white;
+}
+
+.header__btn--ua-parcels {
+	border-radius: 0 6px 6px 0;
+	border: 1px solid #0055a4;
+	width: min-content;
+}
+
+.main__btn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.button__slim {
+	height: 30px;
+}
+
+.button__fat {
+	height: 45px;
+}

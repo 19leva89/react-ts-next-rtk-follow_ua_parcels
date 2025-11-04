@@ -1,0 +1,15 @@
+export const Paths = {
+  home: '/',
+  login: '/login',
+  register: '/register',
+  registerConfirm: '/register-confirm',
+  recovery: '/recovery',
+  recoveryConfirm: '/recovery-confirm',
+  profile: '/profile',
+  tracks: '/tracks',
+  trackAdd: '/tracks/add',
+  trackEdit: '/tracks/edit',
+  carriers: '/carriers',
+  status: '/status',
+  notFound: '*',
+} as const

@@ -1,0 +1,88 @@
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+.header__first-line {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.header__logo {
+	padding: 15px 0;
+	height: 60px;
+}
+
+.header__account {
+	display: flex;
+	gap: 10px;
+}
+
+.input__group {
+	display: flex;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+.navbar__menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+}
+
+.navbar__link--text {
+	color: #008cba;
+}
+
+/* Додайте медіа-запит для екранів шириною менше 760px */
+@media (max-width: 760px) {
+	.header {
+		display: block;
+	}
+
+	.header__first-line {
+		display: block;
+	}
+
+	.header__account {
+		position: absolute;
+		top: 25px;
+		right: 15px;
+	}
+}
+
+/* Додайте медіа-запит для екранів шириною менше 480px */
+@media (max-width: 480px) {
+	.header__logo {
+		display: none; /* Приховуємо header__logo */
+	}
+
+	.header__first-line {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.header__account {
+		position: static;
+	}
+}

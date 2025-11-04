@@ -1,0 +1,46 @@
+/* Стилі для роздільного тексту "Або увійдіть за допомогою" */
+.social__login {
+	text-align: center;
+	font-size: 16px;
+}
+
+/* Стилі для посилань на інші соцмережі */
+.social__links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+
+.social__links a {
+	text-decoration: none;
+}
+
+/* Стилі для кнопок "Увійти за допомогою" */
+.social__button {
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid transparent;
+	padding: 8.5px 13px;
+	border-radius: 6px;
+}
+
+.social__button--apple {
+	background-color: #000000;
+	border-color: #000000;
+	transition: 0.5s;
+}
+
+.social__button--apple:hover {
+	opacity: 0.7;
+}
+
+.social__button--google {
+	background-color: #dd4b39;
+	border-color: #dd4b39;
+	transition: 0.5s;
+}
+
+.social__button--google:hover {
+	opacity: 0.7;
+}

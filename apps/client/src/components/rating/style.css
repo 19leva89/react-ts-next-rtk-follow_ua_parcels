@@ -1,0 +1,28 @@
+.rating_block {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 5px;
+}
+
+.rating_block input[type='radio'] {
+	display: none;
+}
+
+.rating_label {
+	float: right;
+	display: block;
+	width: 16px;
+	height: 15px;
+	background: url('./star.svg') no-repeat 50% 0;
+	cursor: pointer;
+}
+
+.rating_block .rating_label:hover,
+.rating_block .rating_label:hover ~ .rating_label,
+.rating_block input[type='radio']:checked ~ .rating_label {
+	filter: brightness(0) saturate(100%) invert(26%) sepia(46%) saturate(2646%) hue-rotate(190deg)
+		brightness(90%) contrast(106%);
+}

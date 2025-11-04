@@ -1,0 +1,10 @@
+.ant-input-outlined {
+	transition: opacity 0.5s;
+}
+
+.ant-input-outlined:hover,
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+	border-color: #0055a4;
+	opacity: 0.7;
+}

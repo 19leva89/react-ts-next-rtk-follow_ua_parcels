@@ -1,0 +1,20 @@
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-1b0bdye).ant-checkbox:not(.ant-checkbox-disabled):hover
+	.ant-checkbox-inner {
+	border-color: #0055a4;
+	transition: opacity 0.5s;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+	background-color: #0055a4;
+	border-color: #0055a4;
+	opacity: 0.9;
+}
+
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+	.ant-checkbox-checked:not(.ant-checkbox-disabled)
+	.ant-checkbox-inner {
+	background-color: #0055a4;
+	border-color: transparent;
+	opacity: 0.9;
+}

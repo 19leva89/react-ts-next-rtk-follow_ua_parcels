@@ -1,0 +1,15 @@
+.button__top {
+	position: fixed;
+	bottom: 45px;
+	right: 45px;
+	border-radius: 24px;
+	background: #0055a4;
+	width: 45px;
+	height: 45px;
+	padding-bottom: 6px;
+	transition: opacity 0.7s;
+}
+
+.button__top:hover {
+	opacity: 0.7;
+}
