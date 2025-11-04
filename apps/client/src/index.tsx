@@ -23,64 +23,64 @@ import './styles/normalize.css'
 import './styles/main.css'
 
 const router = createBrowserRouter([
-  {
-    path: Paths.home,
-    element: <Home />,
-  },
-  {
-    path: Paths.login,
-    element: <LoginPage />,
-  },
-  {
-    path: Paths.register,
-    element: <RegisterPage />,
-  },
-  {
-    path: Paths.registerConfirm,
-    element: <RegisterConfirmPage />,
-  },
-  {
-    path: Paths.recovery,
-    element: <RecoveryPage />,
-  },
-  {
-    path: Paths.recoveryConfirm,
-    element: <RecoveryConfirmPage />,
-  },
-  {
-    path: Paths.profile,
-    element: <ProfilePage />,
-  },
-  {
-    path: Paths.tracks,
-    element: <TracksPage />,
-  },
-  {
-    path: `${Paths.tracks}/:id`,
-    element: <TrackPage />,
-  },
-  {
-    path: Paths.trackAdd,
-    element: <TrackAddPage />,
-  },
-  {
-    path: Paths.carriers,
-    element: <CarriersPage />,
-  },
-  {
-    path: Paths.notFound,
-    element: <NotFound />,
-  },
+	{
+		path: Paths.home,
+		element: <Home />,
+	},
+	{
+		path: Paths.login,
+		element: <LoginPage />,
+	},
+	{
+		path: Paths.register,
+		element: <RegisterPage />,
+	},
+	{
+		path: Paths.registerConfirm,
+		element: <RegisterConfirmPage />,
+	},
+	{
+		path: Paths.recovery,
+		element: <RecoveryPage />,
+	},
+	{
+		path: Paths.recoveryConfirm,
+		element: <RecoveryConfirmPage />,
+	},
+	{
+		path: Paths.profile,
+		element: <ProfilePage />,
+	},
+	{
+		path: Paths.tracks,
+		element: <TracksPage />,
+	},
+	{
+		path: `${Paths.tracks}/:id`,
+		element: <TrackPage />,
+	},
+	{
+		path: Paths.trackAdd,
+		element: <TrackAddPage />,
+	},
+	{
+		path: Paths.carriers,
+		element: <CarriersPage />,
+	},
+	{
+		path: Paths.notFound,
+		element: <NotFound />,
+	},
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
-  <Provider store={store}>
-    <div className="body__wrapper">
-      <Auth>
-        <RouterProvider router={router} />
-      </Auth>
-    </div>
-  </Provider>,
+	<Provider store={store}>
+		<div className='body__wrapper'>
+			<Auth>
+				<RouterProvider router={router} />
+			</Auth>
+		</div>
+	</Provider>,
 )

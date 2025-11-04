@@ -4,29 +4,29 @@ import { RootState } from '../../app/store'
 import { tracksApi } from '../../app/services/tracks'
 
 interface InitialState {
-  tracks: Track[] | null
-  number: string
+	tracks: Track[] | null
+	number: string
 }
 
 const initialState: InitialState = {
-  tracks: null,
-  number: '',
+	tracks: null,
+	number: '',
 }
 
 const slice = createSlice({
-  name: 'tracks',
-  initialState,
-  reducers: {
-    setTrackNumber: (state, action) => {
-      state.number = action.payload
-    },
-    logout: () => initialState,
-  },
-  extraReducers: (builder) => {
-    builder.addMatcher(tracksApi.endpoints.getAllTracks.matchFulfilled, (state, action) => {
-      state.tracks = action.payload
-    })
-  },
+	name: 'tracks',
+	initialState,
+	reducers: {
+		setTrackNumber: (state, action) => {
+			state.number = action.payload
+		},
+		logout: () => initialState,
+	},
+	extraReducers: (builder) => {
+		builder.addMatcher(tracksApi.endpoints.getAllTracks.matchFulfilled, (state, action) => {
+			state.tracks = action.payload
+		})
+	},
 })
 
 export const { setTrackNumber, logout } = slice.actions

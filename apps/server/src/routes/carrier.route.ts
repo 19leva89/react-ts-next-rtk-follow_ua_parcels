@@ -1,10 +1,10 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-import { all } from "../controllers/carriers.js";
+import { all } from '../controllers/carriers.js'
 
-const router: Router = Router();
+const router: Router = Router()
 
 // /api/carriers
-router.get("/", all);
+router.get('/', all)
 
-export default router;
+export default router

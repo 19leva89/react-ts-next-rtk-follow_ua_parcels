@@ -1,41 +1,41 @@
-import { Router } from "express";
+import { Router } from 'express'
 
 import {
-  login,
-  register,
-  registerConfirm,
-  recovery,
-  recoveryConfirm,
-  newEmail,
-  newPassword,
-  current,
-} from "../controllers/users.js";
-import auth from "../middleware/auth.js";
+	login,
+	register,
+	registerConfirm,
+	recovery,
+	recoveryConfirm,
+	newEmail,
+	newPassword,
+	current,
+} from '../controllers/users.js'
+import auth from '../middleware/auth.js'
 
-const router: Router = Router();
+const router: Router = Router()
 
 // /api/user/login
-router.post("/login", login);
+router.post('/login', login)
 
 // /api/user/register
-router.post("/register", register);
+router.post('/register', register)
 
 // /api/user/register
-router.post("/register-confirm", registerConfirm);
+router.post('/register-confirm', registerConfirm)
 
 // /api/user/recovery
-router.post("/recovery", recovery);
+router.post('/recovery', recovery)
 
 // /api/user/recovery-confirm
-router.post("/recovery-confirm", recoveryConfirm);
+router.post('/recovery-confirm', recoveryConfirm)
 
 //api/user/new-email
-router.post("/new-email", auth, newEmail);
+router.post('/new-email', auth, newEmail)
 
 // /api/user/new-password
-router.post("/new-password", auth, newPassword);
+router.post('/new-password', auth, newPassword)
 
 // /api/user/current
-router.get("/current", auth, current);
+router.get('/current', auth, current)
 
-export default router;
+export default router

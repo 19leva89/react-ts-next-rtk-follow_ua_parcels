@@ -3,15 +3,15 @@ import { useCurrentQuery } from '../../app/services/auth'
 import { Loader } from '../../components/load'
 
 type Props = {
-  children: JSX.Element
+	children: JSX.Element
 }
 
 export const Auth: React.FC<Props> = ({ children }) => {
-  const { isLoading } = useCurrentQuery()
+	const { isLoading } = useCurrentQuery()
 
-  if (isLoading) {
-    return <Loader />
-  }
+	if (isLoading) {
+		return <Loader />
+	}
 
-  return children
+	return children
 }

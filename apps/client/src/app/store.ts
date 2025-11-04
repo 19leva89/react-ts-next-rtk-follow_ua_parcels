@@ -7,25 +7,20 @@ import { api } from './services/api'
 import { listenerMiddleware } from '../middleware/auth'
 
 export const store = configureStore({
-  reducer: {
-    [api.reducerPath]: api.reducer,
-    auth,
-    tracks,
-    carriers,
-  },
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(api.middleware).prepend(listenerMiddleware.middleware)
-  },
+	reducer: {
+		[api.reducerPath]: api.reducer,
+		auth,
+		tracks,
+		carriers,
+	},
+	middleware: (getDefaultMiddleware) => {
+		return getDefaultMiddleware().concat(api.middleware).prepend(listenerMiddleware.middleware)
+	},
 
-  // Додаємо підтримку Redux DevTools, для відстеження та аналізу стану Redux-стейту
-  devTools: process.env.NODE_ENV !== 'production',
+	// Додаємо підтримку Redux DevTools, для відстеження та аналізу стану Redux-стейту
+	devTools: process.env.NODE_ENV !== 'production',
 })
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>

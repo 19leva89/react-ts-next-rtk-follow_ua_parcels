@@ -7,8 +7,8 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -19,7 +19,7 @@ html {
  */
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 /**
@@ -27,9 +27,9 @@ body {
  */
 
 main {
-  display: block;
-  -ms-overflow-style: none; /* IE и Edge */
-  scrollbar-width: none; /* Firefox */
+	display: block;
+	-ms-overflow-style: none; /* IE и Edge */
+	scrollbar-width: none; /* Firefox */
 }
 
 /**
@@ -38,8 +38,8 @@ main {
  */
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -51,9 +51,9 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
 }
 
 /**
@@ -62,8 +62,8 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -74,7 +74,7 @@ pre {
  */
 
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 /**
@@ -83,9 +83,9 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -94,7 +94,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /**
@@ -105,8 +105,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 /**
@@ -114,7 +114,7 @@ samp {
  */
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /**
@@ -124,18 +124,18 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 /* Embedded content
@@ -146,7 +146,7 @@ sup {
  */
 
 img {
-  border-style: none;
+	border-style: none;
 }
 
 /* Forms
@@ -162,13 +162,13 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
 
-  /* Браузери мають різні стандартні шрифти форми */
-  font-size: 13px;
+	/* Браузери мають різні стандартні шрифти форми */
+	font-size: 13px;
 }
 
 /**
@@ -178,13 +178,13 @@ textarea {
 
 button,
 input {
-  /* 1 */
-  overflow: visible;
+	/* 1 */
+	overflow: visible;
 }
 
 /* Видалення дурного зовнішнього світіння в Webkit */
 input:focus {
-  outline: 0;
+	outline: 0;
 }
 
 /**
@@ -194,8 +194,8 @@ input:focus {
 
 button,
 select {
-  /* 1 */
-  text-transform: none;
+	/* 1 */
+	text-transform: none;
 }
 
 /**
@@ -206,7 +206,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
+	-webkit-appearance: button;
 }
 
 /**
@@ -217,8 +217,8 @@ button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+	border-style: none;
+	padding: 0;
 }
 
 /**
@@ -229,7 +229,7 @@ button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
+	outline: 1px dotted ButtonText;
 }
 
 /**
@@ -237,7 +237,7 @@ button:-moz-focusring,
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+	padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -248,12 +248,12 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+	box-sizing: border-box; /* 1 */
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	white-space: normal; /* 1 */
 }
 
 /**
@@ -261,7 +261,7 @@ legend {
  */
 
 progress {
-  vertical-align: baseline;
+	vertical-align: baseline;
 }
 
 /**
@@ -269,7 +269,7 @@ progress {
  */
 
 textarea {
-  overflow: auto;
+	overflow: auto;
 }
 
 /**
@@ -279,8 +279,8 @@ textarea {
 
 [type='checkbox'],
 [type='radio'] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
 }
 
 /**
@@ -289,7 +289,7 @@ textarea {
 
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
-  height: auto;
+	height: auto;
 }
 
 /**
@@ -298,8 +298,8 @@ textarea {
  */
 
 [type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -307,7 +307,7 @@ textarea {
  */
 
 [type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 /**
@@ -316,8 +316,8 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -328,7 +328,7 @@ textarea {
  */
 
 details {
-  display: block;
+	display: block;
 }
 
 /*
@@ -336,7 +336,7 @@ details {
  */
 
 summary {
-  display: list-item;
+	display: list-item;
 }
 
 /* Misc
@@ -347,7 +347,7 @@ summary {
  */
 
 template {
-  display: none;
+	display: none;
 }
 
 /**
@@ -355,28 +355,28 @@ template {
  */
 
 [hidden] {
-  display: none;
+	display: none;
 }
 
 /* Вимкнути останній пошук webkit. Це додає приблизно 15 пікселів відступу зліва */
 ::-webkit-search-decoration {
-  display: none;
+	display: none;
 }
 
 button,
 input[type='reset'],
 input[type='button'],
 input[type='submit'] {
-  /* Виправити помилку відображення IE7 */
-  overflow: visible;
-  width: auto;
+	/* Виправити помилку відображення IE7 */
+	overflow: visible;
+	width: auto;
 }
 
 /* IE8 and FF freak out if this rule is within another selector */
 ::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none;
+	padding: 0;
+	border: 0;
+	background: none;
 }
 
 input,
@@ -384,22 +384,22 @@ label,
 select,
 button,
 textarea {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  display: inline-block;
-  vertical-align: middle;
-  white-space: normal;
-  background: none;
-  line-height: 1;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	background: none;
+	line-height: 1;
 
-  /* Browsers have different default form fonts */
-  font-size: 13px;
+	/* Browsers have different default form fonts */
+	font-size: 13px;
 }
 
 /* Remove the stupid outer glow in Webkit */
 input:focus {
-  outline: 0;
+	outline: 0;
 }
 
 /* Text Inputs
@@ -426,8 +426,8 @@ input[type='week'] {
 
 input[type='checkbox'],
 input[type='radio'] {
-  width: 13px;
-  height: 13px;
+	width: 13px;
+	height: 13px;
 }
 
 /* Search Input
@@ -437,7 +437,7 @@ input[type='radio'] {
 
 /* Turn off the recent search for webkit. It adds about 15px padding on the left */
 ::-webkit-search-decoration {
-  display: none;
+	display: none;
 }
 
 /* Buttons
@@ -447,47 +447,49 @@ button,
 input[type='reset'],
 input[type='button'],
 input[type='submit'] {
-  /* Fix IE7 display bug */
-  overflow: visible;
-  width: auto;
+	/* Fix IE7 display bug */
+	overflow: visible;
+	width: auto;
 }
 
 /* IE8 and FF freak out if this rule is within another selector */
 ::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none;
+	padding: 0;
+	border: 0;
+	background: none;
 }
 
 /* Textarea
 -----------------------------------------------*/
 
 textarea {
-  /* Move the label to the top */
-  vertical-align: top;
+	/* Move the label to the top */
+	vertical-align: top;
 
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto;
+	/* Turn off scroll bars in IE unless needed */
+	overflow: auto;
 }
 
 /* Selects
 -----------------------------------------------*/
 
 select[multiple] {
-  /* Move the label to the top */
-  vertical-align: top;
+	/* Move the label to the top */
+	vertical-align: top;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-  transition: background-color 600000s 0s, color 600000s 0s;
+	transition:
+		background-color 600000s 0s,
+		color 600000s 0s;
 }
 input[data-autocompleted] {
-  background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 main::-webkit-scrollbar {
-  display: none !important;
+	display: none !important;
 }
 
 a,
@@ -571,16 +573,16 @@ u,
 ul,
 var,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 :focus {
-  outline: 0;
+	outline: 0;
 }
 
 article,
@@ -594,249 +596,249 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 
 body {
-  line-height: 1;
+	line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+	quotes: none;
 }
 
 blockquote:after,
 blockquote:before,
 q:after,
 q:before {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
 input[type='search'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical;
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
 }
 
 audio,
 canvas,
 video {
-  display: inline-block;
-  max-width: 100%;
+	display: inline-block;
+	max-width: 100%;
 }
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+	display: none;
+	height: 0;
 }
 
 [hidden] {
-  display: none;
+	display: none;
 }
 
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 a:active,
 a:hover {
-  outline: 0;
+	outline: 0;
 }
 
 img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
 }
 
 figure {
-  margin: 0;
+	margin: 0;
 }
 
 form {
-  margin: 0;
+	margin: 0;
 }
 
 fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
-  border: 0;
-  padding: 0;
-  white-space: normal;
+	border: 0;
+	padding: 0;
+	white-space: normal;
 }
 
 button,
 input,
 select,
 textarea {
-  font-size: 100%;
-  margin: 0;
-  vertical-align: baseline;
-  outline: 0;
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
+	outline: 0;
 }
 
 button,
 input {
-  line-height: normal;
-  padding: 0;
-  border: 0;
-  background: 0;
-  box-shadow: 0 0 0 transparent;
+	line-height: normal;
+	padding: 0;
+	border: 0;
+	background: 0;
+	box-shadow: 0 0 0 transparent;
 }
 
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 button,
 html input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  -webkit-appearance: button;
-  cursor: pointer;
+	-webkit-appearance: button;
+	cursor: pointer;
 }
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+	cursor: default;
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
+	box-sizing: border-box;
+	padding: 0;
 }
 
 input[type='search'] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+	border: 0;
+	padding: 0;
 }
 
 textarea {
-  overflow: auto;
-  vertical-align: top;
+	overflow: auto;
+	vertical-align: top;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 img {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 .chromeframe {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
 }
 
 a:active,
 a:focus {
-  outline: 0;
+	outline: 0;
 }
 
 input,
 textarea {
-  outline: 0;
+	outline: 0;
 }
 
 input:active,
 textarea:active {
-  outline: 0;
+	outline: 0;
 }
 
 :focus {
-  outline: 0;
+	outline: 0;
 }
 
 textarea {
-  resize: none;
+	resize: none;
 }
 
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 textarea {
-  resize: horizontal;
+	resize: horizontal;
 }
 
 button:active,
 button:focus {
-  outline: 0;
+	outline: 0;
 }
 
 button::-moz-focus-inner {
-  border: 0;
+	border: 0;
 }
 
 button:active,
 button:focus {
-  outline: 0;
+	outline: 0;
 }
 
 button::-moz-focus-inner {
-  border: 0;
+	border: 0;
 }
 
 a.active.focus,
@@ -851,56 +853,56 @@ button.focus,
 button:active.focus,
 button:active:focus,
 button:focus {
-  outline: 0;
-  outline-color: transparent;
-  outline-width: 0;
-  outline-style: none;
-  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+	outline: 0;
+	outline-color: transparent;
+	outline-width: 0;
+	outline-style: none;
+	box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
 }
 
 input[placeholder] {
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 input::-moz-placeholder {
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 input:-moz-placeholder {
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 input:-ms-input-placeholder {
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 input {
-  background-color: inherit;
-  background-image: inherit;
-  color: inherit;
+	background-color: inherit;
+	background-image: inherit;
+	color: inherit;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 input[type='number'] {
-  -moz-appearance: textfield;
-  -webkit-appearance: unset;
+	-moz-appearance: textfield;
+	-webkit-appearance: unset;
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }

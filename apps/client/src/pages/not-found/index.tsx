@@ -4,19 +4,19 @@ import { Header } from '../../components/header'
 import { Footer } from '../../components/footer'
 
 const NotFoundPage: React.FC = () => {
-  return (
-    <>
-      <div className="content__wrapper">
-        <Header />
+	return (
+		<>
+			<div className='content__wrapper'>
+				<Header />
 
-        <main>
-          <NotFoundBlock />;
-        </main>
-      </div>
+				<main>
+					<NotFoundBlock />;
+				</main>
+			</div>
 
-      <Footer />
-    </>
-  )
+			<Footer />
+		</>
+	)
 }
 
 export default NotFoundPage
