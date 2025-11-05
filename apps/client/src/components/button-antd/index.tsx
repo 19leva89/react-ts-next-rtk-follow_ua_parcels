@@ -1,31 +1,29 @@
-import React from 'react'
-
+import { ReactNode } from 'react'
 import { Button, Form } from 'antd'
 
 import './style.css'
 
-type Props = {
-	children: React.ReactNode
+interface Props {
+	children: ReactNode
 	htmlType: 'button' | 'submit' | 'reset' | undefined
 	type: 'default' | 'link' | 'text' | 'primary' | 'dashed' | undefined
 	size?: 'large' | 'middle' | 'small'
-	className?: string
 	ghost?: boolean
 	danger?: boolean
 	block?: boolean
 	loading?: boolean
 	disabled?: boolean
 	shape?: 'default' | 'circle' | 'round' | undefined
-	icon?: React.ReactNode
+	icon?: ReactNode
+	className?: string
 	onClick?: () => void
 }
 
-export const ButtonAntd: React.FC<Props> = ({
+export const ButtonAntd = ({
 	children,
 	htmlType,
 	type,
 	size,
-	className,
 	ghost,
 	danger,
 	block,
@@ -33,8 +31,9 @@ export const ButtonAntd: React.FC<Props> = ({
 	disabled,
 	shape,
 	icon,
+	className,
 	onClick,
-}) => {
+}: Props) => {
 	return (
 		<Form.Item>
 			<Button

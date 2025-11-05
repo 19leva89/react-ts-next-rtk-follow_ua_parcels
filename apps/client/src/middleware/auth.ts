@@ -1,5 +1,6 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit'
-import { authApi } from '../app/services/auth'
+
+import { authApi } from '@/services/auth'
 
 export const listenerMiddleware = createListenerMiddleware()
 

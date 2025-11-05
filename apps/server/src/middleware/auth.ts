@@ -19,6 +19,10 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
 			},
 		})
 
+		if (!user) {
+			return res.status(404).json({ message: 'Користувача не знайдено' })
+		}
+
 		req.user = user
 
 		next()

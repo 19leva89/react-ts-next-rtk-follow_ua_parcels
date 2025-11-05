@@ -7,22 +7,15 @@
     "dev": "pnpm dlx tsx --env-file=.env --watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "check-types": "tsc --noEmit",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev --skip-generate",
-    "db:deploy": "prisma migrate deploy",
-    "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^6.18.0",
+    "@repo/parcels-db": "workspace:*",
     "@repo/ui": "workspace:*",
     "axios": "^1.13.2",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "debug": "^2.6.9",
     "dotenv": "^16.6.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -36,7 +29,6 @@
     "@types/express": "^5.0.5",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
-    "prisma": "^6.18.0",
     "typescript": "^5.9.3"
   }
 }

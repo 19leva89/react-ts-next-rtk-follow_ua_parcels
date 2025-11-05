@@ -1,19 +1,19 @@
 import './style.css'
 
-type Props = {
+interface Props {
 	status: string
 	msg: string | null
 }
 
-export const Alert: React.FC<Props> = ({ status = 'disabled', msg }) => {
+export const Alert = ({ status = 'disabled', msg }: Props) => {
 	return <div className={`alert alert--${status}`}>{msg}</div>
 }
 
-export const Loader: React.FC = () => {
+export const Loader = () => {
 	return <div className='loader'></div>
 }
 
-export const Skeleton: React.FC = () => {
+export const Skeleton = () => {
 	return (
 		<div className='skeleton'>
 			<div className='skeleton__item'></div>

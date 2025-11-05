@@ -3,16 +3,16 @@ import { ReactNode } from 'react'
 import btnImg from './btn-ua-parcels.svg'
 import './style.css'
 
-type Props = {
+interface Props {
 	type: 'submit' | 'reset' | 'button'
-	className: string
 	disabled?: boolean
+	className?: string
 	children: ReactNode
 }
 
-export const Button: React.FC<Props> = ({ type, className, disabled, children }) => {
+export const Button = ({ type, disabled, className, children }: Props) => {
 	return (
-		<button type={type} className={className} disabled={disabled}>
+		<button type={type} disabled={disabled} className={className}>
 			<img height='15px' src={btnImg} alt='Button' />
 			{children}
 		</button>

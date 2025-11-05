@@ -1,28 +1,21 @@
 import { Form, Input } from 'antd'
 import { NamePath } from 'antd/es/form/interface'
 
-import styles from './style.module.css'
-
-type Props = {
+interface Props {
 	name: string
 	placeholder: string
-	size: 'large' | 'middle' | 'small'
-	required: boolean
+	size?: 'large' | 'middle' | 'small'
+	required?: boolean
 	dependencies?: NamePath[]
 }
 
-export const FieldPassword: React.FC<Props> = ({
-	name,
-	placeholder,
-	size,
-	required = true,
-	dependencies,
-}) => {
+export const FieldPassword = ({ name, placeholder, size, required, dependencies }: Props) => {
 	return (
 		<Form.Item
 			name={name}
 			rules={[
 				{ required: required, message: `Обов'язкове поле` },
+
 				({ getFieldValue }) => ({
 					validator(_, value) {
 						if (!value) {

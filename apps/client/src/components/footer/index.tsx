@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom'
+import Link from 'next/link'
 
-import { Paths } from '../../paths'
+import { Paths } from '../../constants/paths'
 
 import logo from './logo-footer-v1-ua.svg'
 import './style.css'
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
 	return (
 		<footer>
 			<div className='footer__main'>
@@ -13,27 +13,27 @@ export const Footer: React.FC = () => {
 					<p className='footer__title'>Відстеження посилок</p>
 					<ul className='footer__list'>
 						<li>
-							<NavLink to={Paths.home} className='footer__item'>
+							<Link href={Paths.home} className='footer__item'>
 								Відстежити посилку
-							</NavLink>
+							</Link>
 						</li>
 
 						<li>
-							<NavLink to='/china/aliexpress' className='footer__item'>
+							<Link href='/china/aliexpress' className='footer__item'>
 								Відстежити моє замовлення Aliexpress
-							</NavLink>
+							</Link>
 						</li>
 
 						<li>
-							<NavLink to='/china/wish' className='footer__item'>
+							<Link href='/china/wish' className='footer__item'>
 								Відстежити мій список бажань
-							</NavLink>
+							</Link>
 						</li>
 
 						<li>
-							<NavLink to='/china' className='footer__item'>
+							<Link href='/china' className='footer__item'>
 								Відстежити мою посилку з Китаю
-							</NavLink>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -42,21 +42,21 @@ export const Footer: React.FC = () => {
 					<p className='footer__title'>Інформація</p>
 					<ul className='footer__list'>
 						<li>
-							<NavLink to='/shop' className='footer__item'>
+							<Link href='/shop' className='footer__item'>
 								Магазини
-							</NavLink>
+							</Link>
 						</li>
 
 						<li>
-							<NavLink to='/delivery-stats' className='footer__item'>
+							<Link href='/delivery-stats' className='footer__item'>
 								Прогноз термінів доставки
-							</NavLink>
+							</Link>
 						</li>
 
 						<li>
-							<NavLink to={Paths.carriers} className='footer__item'>
+							<Link href={Paths.carriers} className='footer__item'>
 								Служби доставки
-							</NavLink>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -65,19 +65,19 @@ export const Footer: React.FC = () => {
 					<p className='footer__title'>Послуги</p>
 					<ul className='footer__list'>
 						<li>
-							<NavLink to='#' className='footer__item' target='_blank'>
+							<Link href='#' className='footer__item' target='_blank'>
 								Додаток для iPhone та iPad
-							</NavLink>
+							</Link>
 						</li>
 						<li>
-							<NavLink to='#' className='footer__item' target='_blank'>
+							<Link href='#' className='footer__item' target='_blank'>
 								Додаток для Android
-							</NavLink>
+							</Link>
 						</li>
 						<li>
-							<NavLink to='#' className='footer__item' target='_blank'>
+							<Link href='#' className='footer__item' target='_blank'>
 								Бот для Telegram
-							</NavLink>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -85,9 +85,9 @@ export const Footer: React.FC = () => {
 				<div className='footer__copyright'>
 					<img src={logo} alt='Відстеження поштових відправлень та посилок Follow UA Parcels' />
 
-					<NavLink to='/support/contact-us' className='footer__item'>
+					<Link href='/support/contact-us' className='footer__item'>
 						Контакти
-					</NavLink>
+					</Link>
 
 					<div className='footer__item'>
 						© <time dateTime='2024'>2024</time> Follow UA Parcels

@@ -2,7 +2,7 @@ import { Form, Input } from 'antd'
 
 import './style.css'
 
-type Props = {
+interface Props {
 	name: string
 	placeholder: string
 	type: string
@@ -10,7 +10,7 @@ type Props = {
 	required: boolean
 }
 
-export const Field: React.FC<Props> = ({ name, placeholder, type, size, required }) => {
+export const Field = ({ name, placeholder, type, size, required }: Props) => {
 	return (
 		<Form.Item name={name} rules={[{ required: required, message: `Обов'язкове поле` }]} shouldUpdate={true}>
 			<Input placeholder={placeholder} type={type} size={size} />

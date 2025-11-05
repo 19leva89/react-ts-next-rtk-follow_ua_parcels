@@ -1,24 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 
 import './style.css'
 
-type Props = {
+interface Props {
 	carrierId: number
 	initialRating: number
 }
 
-export const Rating: React.FC<Props> = ({ carrierId, initialRating }) => {
-	const [rating, setRating] = React.useState(initialRating)
+export const Rating = ({ carrierId, initialRating }: Props) => {
+	const [rating, setRating] = useState<number>(initialRating)
 
 	const handleRatingChange = (value: number) => {
 		setRating(value)
-		// Логіка для збереження рейтингу у базі даних
+
+		// TODO: Add logic to save rating to database
 	}
 
 	return (
 		<div className='rating_block'>
 			{[5, 4, 3, 2, 1].map((value) => (
-				<React.Fragment key={`${carrierId}-rating-${value}`}>
+				<div key={`${carrierId}-rating-${value}`}>
 					<input
 						name={`${carrierId}-rating`}
 						value={value}
@@ -29,7 +30,7 @@ export const Rating: React.FC<Props> = ({ carrierId, initialRating }) => {
 						onChange={() => handleRatingChange(value)}
 					/>
 					<label htmlFor={`${carrierId}-rating-${value}`} className='rating_label' />
-				</React.Fragment>
+				</div>
 			))}
 		</div>
 	)

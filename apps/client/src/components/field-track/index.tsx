@@ -1,15 +1,15 @@
 import './style.css'
 
-type Props = {
-	className: string
+interface Props {
+	type: string
 	name: string
 	placeholder: string
-	type: string
 	value: string
+	className?: string
 	onChange: (value: string) => void
 }
 
-export const FieldTrack: React.FC<Props> = ({ className, name, placeholder, type, value, onChange }) => {
+export const FieldTrack = ({ type, name, placeholder, value, className, onChange }: Props) => {
 	return (
 		<div className='field field__track'>
 			<input

@@ -1,12 +1,13 @@
-import React from 'react'
-import { useCurrentQuery } from '../../app/services/auth'
-import { Loader } from '../../components/load'
+import { JSX } from 'react'
 
-type Props = {
+import { Loader } from '@/components/load'
+import { useCurrentQuery } from '@/services/auth'
+
+interface Props {
 	children: JSX.Element
 }
 
-export const Auth: React.FC<Props> = ({ children }) => {
+export const Auth = ({ children }: Props) => {
 	const { isLoading } = useCurrentQuery()
 
 	if (isLoading) {

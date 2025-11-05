@@ -1,15 +1,16 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+
 import scrollTop from './scroll_top.svg'
 import './style.css'
 
-type Props = {
+interface Props {
 	className: string
 }
 
-export const ButtonScrollTop: React.FC<Props> = ({ className }) => {
-	const [showButton, setShowButton] = React.useState(false)
+export const ButtonScrollTop = ({ className }: Props) => {
+	const [showButton, setShowButton] = useState<boolean>(false)
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const handleScroll = () => {
 			const scrolled = window.scrollY
 			const screenHeight = window.innerHeight

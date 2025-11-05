@@ -3,16 +3,16 @@ import { MouseEventHandler } from 'react'
 import Cross from './cross.svg'
 import './style.css'
 
-type Props = {
-	className: string
-	onClick?: MouseEventHandler<HTMLButtonElement>
+interface Props {
 	type: 'submit' | 'reset' | 'button'
 	title: string
+	className: string
+	onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export const ButtonDelete: React.FC<Props> = ({ className, onClick, type, title }) => {
+export const ButtonDelete = ({ type, title, className, onClick }: Props) => {
 	return (
-		<button className={className} onClick={onClick} type={type} title={title}>
+		<button type={type} title={title} className={className} onClick={onClick}>
 			<img src={Cross} alt='Delete' />
 		</button>
 	)

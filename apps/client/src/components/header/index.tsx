@@ -1,35 +1,35 @@
-import React from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { Track } from '@prisma/client'
-
 import { Form } from 'antd'
-import { Button } from '../button'
-import { FieldTrack } from '../field-track'
-import { MsgResponse } from '../msg-response'
+import Link from 'next/link'
+import { useState } from 'react'
+import { Track } from '@repo/parcels-db'
+import { useDispatch, useSelector } from 'react-redux'
+import { usePathname, useRouter } from 'next/navigation'
 
-import { Paths } from '../../paths'
-import { useAddTrackMutation } from '../../app/services/tracks'
-import { isErrorWithMsg } from '../../utils/is-error-with-msg'
-import { logout, selectUser } from '../../features/auth/authSlice'
-import { selectTrackNumber, setTrackNumber } from '../../features/tracks/tracksSlice'
+import { Paths } from '@/constants/paths'
+import { Button } from '@/components/button'
+import { FieldTrack } from '@/components/field-track'
+import { MsgResponse } from '@/components/msg-response'
+import { useAddTrackMutation } from '@/services/tracks'
+import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { logout, selectUser } from '@/features/auth/authSlice'
+import { selectTrackNumber, setTrackNumber } from '@/features/tracks/tracksSlice'
 
 import logo from './logo-v1-ua.svg'
 import './style.css'
 
-export const Header: React.FC = () => {
-	const user = useSelector(selectUser)
-	const navigate = useNavigate()
+export const Header = () => {
+	const router = useRouter()
+	const pathname = usePathname()
 	const dispatch = useDispatch()
+	const user = useSelector(selectUser)
 	const trackNumber = useSelector(selectTrackNumber)
+
 	const [addTrack] = useAddTrackMutation()
-	const [msg, setMsg] = React.useState('')
-	const [msgType, setMsgType] = React.useState<'success' | 'info' | 'warning' | 'error' | undefined>('info')
+	const [msg, setMsg] = useState<string>('')
+	const [activeTab, setActiveTab] = useState<string>('myTracks')
+	const [msgType, setMsgType] = useState<'success' | 'info' | 'warning' | 'error' | undefined>('info')
 
-	const [activeTab, setActiveTab] = React.useState<string>('myTracks')
-
-	const location = useLocation()
-	const isTracksPage = location.pathname === '/tracks'
+	const isTracksPage = pathname === Paths.tracks
 
 	const handleTrackNumberChange = (value: string) => {
 		dispatch(setTrackNumber(value))
@@ -58,10 +58,10 @@ export const Header: React.FC = () => {
 	const onLogoutClick = () => {
 		dispatch(logout())
 		localStorage.removeItem('token')
-		navigate(Paths.home)
+		router.push(Paths.home)
 	}
 
-	const handleNavLinkClick = (tab: string) => {
+	const handleLinkClick = (tab: string) => {
 		setActiveTab(tab)
 		localStorage.setItem('activeTab', tab)
 	}
@@ -69,9 +69,9 @@ export const Header: React.FC = () => {
 	return (
 		<header>
 			<section className='header'>
-				<NavLink to={Paths.home}>
+				<Link href={Paths.home}>
 					<img className='header__logo' src={logo} alt='Follow UA Parcels - Best package tracking service' />
-				</NavLink>
+				</Link>
 
 				<div className='header__first-line'>
 					<Form onFinish={handleAddTrack}>
@@ -93,9 +93,9 @@ export const Header: React.FC = () => {
 					{user ? (
 						<div className='header__account'>
 							<span className='header__btn'>
-								<NavLink to={Paths.profile} className='button header__btn button__primary button__slim'>
+								<Link href={Paths.profile} className='button header__btn button__primary button__slim'>
 									Профіль
-								</NavLink>
+								</Link>
 
 								<form action='' method='' className='' onSubmit={onLogoutClick}>
 									<button className='button header__btn button__transparent button__slim' type='submit'>
@@ -118,13 +118,13 @@ export const Header: React.FC = () => {
 					) : (
 						<div className='header__account'>
 							<span className='header__btn'>
-								<NavLink to={Paths.login} className='button header__btn button__primary button__slim'>
+								<Link href={Paths.login} className='button header__btn button__primary button__slim'>
 									Увійти
-								</NavLink>
+								</Link>
 
-								<NavLink to={Paths.register} className='button header__btn button__transparent button__slim'>
+								<Link href={Paths.register} className='button header__btn button__transparent button__slim'>
 									Зареєструватися
-								</NavLink>
+								</Link>
 							</span>
 						</div>
 					)}
@@ -140,45 +140,45 @@ export const Header: React.FC = () => {
 							{!isTracksPage && (
 								<>
 									<div className='navbar__link'>
-										<NavLink
-											to={Paths.tracks}
+										<Link
+											href={Paths.tracks}
 											className='navbar__link--text'
-											onClick={() => handleNavLinkClick('myTracks')}
+											onClick={() => handleLinkClick('myTracks')}
 										>
 											Мої посилки
-										</NavLink>
+										</Link>
 									</div>
 
 									<div className='navbar__link'>
-										<NavLink
-											to={Paths.tracks}
+										<Link
+											href={Paths.tracks}
 											className='navbar__link--text'
-											onClick={() => handleNavLinkClick('myTracksArchive')}
+											onClick={() => handleLinkClick('myTracksArchive')}
 										>
 											Архів
-										</NavLink>
+										</Link>
 									</div>
 								</>
 							)}
 						</div>
 
 						<div className='navbar__link'>
-							<NavLink
-								to='/delivery-stats'
+							<Link
+								href='/delivery-stats'
 								className='button header__btn button__transparent navbar__link--text button__slim'
 							>
 								Час доставки
-							</NavLink>
+							</Link>
 						</div>
 					</>
 				) : (
 					<div className='navbar__link'>
-						<NavLink
-							to='/delivery-stats'
+						<Link
+							href='/delivery-stats'
 							className='button header__btn button__transparent navbar__link--text'
 						>
 							Час доставки
-						</NavLink>
+						</Link>
 					</div>
 				)}
 			</nav>

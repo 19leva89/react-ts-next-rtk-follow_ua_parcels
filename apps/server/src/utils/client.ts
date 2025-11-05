@@ -1,4 +1,4 @@
-import { PrismaClient } from '../../generated/prisma/index.js'
+import { PrismaClient } from '@repo/parcels-db'
 
 const prismaClientSingleton = () => {
 	const isVercel = process.env.VERCEL === '1'
@@ -28,7 +28,7 @@ declare const globalThis: {
 	prismaGlobal: ReturnType<typeof prismaClientSingleton>
 } & typeof global
 
-export const prisma = globalThis.prismaGlobal ?? prismaClientSingleton()
+export const prisma: PrismaClient = globalThis.prismaGlobal ?? prismaClientSingleton()
 
 if (process.env.NODE_ENV !== 'production') {
 	globalThis.prismaGlobal = prisma

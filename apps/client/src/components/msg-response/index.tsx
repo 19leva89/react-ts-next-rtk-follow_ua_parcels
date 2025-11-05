@@ -1,19 +1,19 @@
-import React from 'react'
 import { Alert } from 'antd'
 import { AlertProps } from 'antd/lib/alert'
+import { useEffect, useState } from 'react'
 
 import styles from './style.module.css'
 
-type Props = {
+interface Props {
 	msg?: string
 	type: 'success' | 'info' | 'warning' | 'error' | undefined
 }
 
-export const MsgResponse: React.FC<Props> = ({ msg, type }) => {
-	const [closed, setClosed] = React.useState(!msg)
-	const [key, setKey] = React.useState(0)
+export const MsgResponse = ({ msg, type }: Props) => {
+	const [key, setKey] = useState<number>(0)
+	const [closed, setClosed] = useState<boolean>(!msg)
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (msg) {
 			setClosed(false)
 
@@ -42,8 +42,8 @@ export const MsgResponse: React.FC<Props> = ({ msg, type }) => {
 	}
 
 	return !closed ? (
-		<React.Fragment key={key}>
+		<div key={key}>
 			<Alert {...alertProps} />
-		</React.Fragment>
+		</div>
 	) : null
 }

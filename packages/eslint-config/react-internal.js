@@ -23,7 +23,7 @@ export const config = [
 	...tseslint.configs.recommended,
 
 	// React
-	pluginReact.configs.flat.recommended,
+	plugin configs.flat.recommended,
 
 	// Config for browser
 	{

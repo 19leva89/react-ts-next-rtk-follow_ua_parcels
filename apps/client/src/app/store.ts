@@ -1,10 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
-import auth from './../features/auth/authSlice'
-import tracks from '../features/tracks/tracksSlice'
-import carriers from '../features/carriers/carriersSlice'
-import { api } from './services/api'
-import { listenerMiddleware } from '../middleware/auth'
+import { api } from '@/services/api'
+import auth from '@/features/auth/authSlice'
+import tracks from '@/features/tracks/tracksSlice'
+import { listenerMiddleware } from '@/middleware/auth'
+import carriers from '@/features/carriers/carriersSlice'
 
 export const store = configureStore({
 	reducer: {

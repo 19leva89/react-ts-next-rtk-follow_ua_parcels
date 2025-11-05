@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Carrier, ListResponse } from '../../app/services/carriers'
-import { carriersApi } from '../../app/services/carriers'
-import { RootState } from '../../app/store'
+
+import { RootState } from '@/app/store'
+import { carriersApi } from '@/services/carriers'
+import { Carrier, ListResponse } from '@/services/carriers'
 
 interface CarriersState {
 	data: Carrier[]

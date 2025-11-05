@@ -1,7 +1,8 @@
-import { User } from '@prisma/client'
+import { User } from '@repo/parcels-db'
 import { createSlice } from '@reduxjs/toolkit'
-import { authApi } from './../../app/services/auth'
-import { RootState } from './../../app/store'
+
+import { RootState } from '@/app/store'
+import { authApi } from '@/services/auth'
 
 interface InitialState {
 	user: (User & { token: string; msg: string }) | null

@@ -1,7 +1,8 @@
-import { Track } from '@prisma/client'
+import { Track } from '@repo/parcels-db'
 import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from '../../app/store'
-import { tracksApi } from '../../app/services/tracks'
+
+import { RootState } from '@/app/store'
+import { tracksApi } from '@/services/tracks'
 
 interface InitialState {
 	tracks: Track[] | null

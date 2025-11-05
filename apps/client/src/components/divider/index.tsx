@@ -1,9 +1,9 @@
 import './style.css'
 
-type Props = {
+interface Props {
 	className: string
 }
 
-export const Divider: React.FC<Props> = ({ className }) => {
+export const Divider = ({ className }: Props) => {
 	return <div className={className}></div>
 }

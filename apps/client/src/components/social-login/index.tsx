@@ -1,22 +1,23 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import googleLogo from './google-logo.svg'
+import Link from 'next/link'
+
 import appleLogo from './apple-logo.svg'
+import googleLogo from './google-logo.svg'
+
 import './style.css'
 
-export const SocialLogin: React.FC = () => {
+export const SocialLogin = () => {
 	return (
 		<>
 			<h4 className='social__login'>Увійти як користувач</h4>
 
 			<p className='social__links'>
-				<NavLink to='/auth/oauth/google'>
+				<Link href='/auth/oauth/google'>
 					<img className='social__button social__button--google' src={googleLogo} alt='Google' />
-				</NavLink>
+				</Link>
 
-				<NavLink to='/auth/oauth/apple'>
+				<Link href='/auth/oauth/apple'>
 					<img className='social__button social__button--apple' src={appleLogo} alt='Apple' />
-				</NavLink>
+				</Link>
 			</p>
 		</>
 	)

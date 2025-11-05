@@ -282,6 +282,10 @@ const newEmail = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Будь ласка, заповніть обов'язкові поля` })
 		}
 
+		if (!req.user) {
+			return res.status(401).json({ msg: 'Необхідно авторизуватися' })
+		}
+
 		const user = await prisma.user.findFirst({
 			where: {
 				id: req.user.id,
@@ -334,6 +338,10 @@ const newPassword = async (req: Request, res: Response) => {
 		const { oldPassword, newPassword } = req.body
 		if (!oldPassword || !newPassword) {
 			return res.status(400).json({ msg: `Будь ласка, заповніть обов'язкові поля` })
+		}
+
+		if (!req.user) {
+			return res.status(401).json({ msg: 'Необхідно авторизуватися' })
 		}
 
 		const user = await prisma.user.findFirst({ where: { id: req.user.id } })

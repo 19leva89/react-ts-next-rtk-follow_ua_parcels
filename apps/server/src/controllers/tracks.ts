@@ -10,11 +10,13 @@ import { prisma } from '../utils/client.js'
  */
 const all = async (req: Request, res: Response) => {
 	try {
-		const userId = req.user.id
+		if (!req.user) {
+			return res.status(401).json({ msg: 'Необхідно авторизуватися' })
+		}
 
 		const tracks = await prisma.track.findMany({
 			where: {
-				userId: userId,
+				userId: req.user.id,
 			},
 		})
 
@@ -69,6 +71,10 @@ const add = async (req: Request, res: Response) => {
 
 		if (!data.name) {
 			data.name = 'Без назви'
+		}
+
+		if (!req.user) {
+			return res.status(401).json({ msg: 'Необхідно авторизуватися' })
 		}
 
 		// Отримання інформації про трек з 17track.net

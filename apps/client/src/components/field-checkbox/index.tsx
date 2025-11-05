@@ -1,9 +1,10 @@
+import { ReactNode } from 'react'
 import { Checkbox, Form } from 'antd'
 
 import './style.css'
 
 interface Props {
-	children: React.ReactNode
+	children: ReactNode
 	name: string
 	valuePropName: string
 	required: boolean
@@ -11,14 +12,14 @@ interface Props {
 	defaultChecked?: boolean
 }
 
-export const FieldCheckbox: React.FC<Props> = ({
+export const FieldCheckbox = ({
 	children,
 	name,
 	checked,
 	defaultChecked,
 	valuePropName,
 	required,
-}) => {
+}: Props) => {
 	return (
 		<Form.Item
 			name={name}
