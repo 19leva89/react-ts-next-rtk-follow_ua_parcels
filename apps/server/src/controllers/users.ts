@@ -1,7 +1,7 @@
-import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
 import crypto from 'crypto'
+import jwt from 'jsonwebtoken'
+import { Request, Response } from 'express'
 
 import { prisma } from '../utils/client.js'
 
@@ -57,13 +57,13 @@ const register = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Будь ласка, заповніть обов'язкові поля` })
 		}
 
-		const registredUser = await prisma.user.findFirst({
+		const registeredUser = await prisma.user.findFirst({
 			where: {
 				email: email.toLowerCase(),
 			},
 		})
 
-		if (registredUser) {
+		if (registeredUser) {
 			return res.status(400).json({ msg: `Користувач з такою електронною адресою вже існує` })
 		}
 
@@ -81,19 +81,19 @@ const register = async (req: Request, res: Response) => {
 
 		const secret = process.env.JWT_SECRET
 
-		// Генеруємо унікальний код підтвердження
+		// Generate unique confirmation code
 		const confirmCode = crypto.randomInt(100000, 999999).toString()
 
-		// Зберігаємо код в базі даних
+		// Save code in database
 		await prisma.confirmCode.create({
 			data: {
 				userId: user.id,
 				code: confirmCode,
-				expiresAt: new Date(Date.now() + 360 * 60 * 1000), // Дійсний протягом 6 годин
+				expiresAt: new Date(Date.now() + 360 * 60 * 1000), // Valid for 6 hours
 			},
 		})
 
-		// Відправити код користувачеві, наприклад, по електронній пошті або SMS
+		// Send the code to the user, for example, via email or SMS
 		console.log('Email confirm code:', confirmCode)
 
 		if (user && secret && confirmCode) {
@@ -133,13 +133,13 @@ const registerConfirm = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Користувача з такою електронною адресою не існує` })
 		}
 
-		// Отримуємо збережений код відновлення з бази даних або кешу
+		// Get the stored recovery code from the database or cache
 		const savedCodeRecord = await prisma.confirmCode.findFirst({
 			where: {
 				userId: regUser.id,
 				code: code,
 				expiresAt: {
-					gte: new Date(), // Перевірка часу закінчення терміну дії коду
+					gte: new Date(), // Check code expiration time
 				},
 			},
 		})
@@ -148,13 +148,13 @@ const registerConfirm = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Невірний код підтвердження пошти або термін його дії закінчився` })
 		}
 
-		// Оновіть статус підтвердження email у базі даних
+		// Update email confirmation status in the database
 		await prisma.user.update({
 			where: { id: regUser.id },
 			data: { isConfirmed: true },
 		})
 
-		// Видаляємо використаний код відновлення
+		// Delete used recovery code
 		await prisma.confirmCode.delete({
 			where: {
 				id: savedCodeRecord.id,
@@ -189,19 +189,19 @@ const recovery = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Користувача з такою електронною адресою не існує` })
 		}
 
-		// Генеруємо унікальний код відновлення
+		// Generate unique recovery code
 		const recoveryCode = crypto.randomInt(100000, 999999).toString()
 
-		// Зберігаємо код в базі даних
+		// Save code in database
 		await prisma.recoveryCode.create({
 			data: {
 				userId: user.id,
 				code: recoveryCode,
-				expiresAt: new Date(Date.now() + 30 * 60 * 1000), // Дійсний протягом 30 хвилин
+				expiresAt: new Date(Date.now() + 30 * 60 * 1000), // Valid for 30 minutes
 			},
 		})
 
-		// Відправити код користувачеві, наприклад, по електронній пошті або SMS
+		// Send the code to the user, for example, via email or SMS
 		console.log('Change password confirm code:', recoveryCode)
 
 		return res.status(201).json({ msg: `Код для відновлення паролю відправлено у консоль` })
@@ -233,13 +233,13 @@ const recoveryConfirm = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Користувача з такою електронною адресою не існує` })
 		}
 
-		// Отримуємо збережений код відновлення з бази даних або кешу
+		// Get the stored recovery code from the database or cache
 		const savedCodeRecord = await prisma.recoveryCode.findFirst({
 			where: {
 				userId: user.id,
 				code: code,
 				expiresAt: {
-					gte: new Date(), // Перевірка часу закінчення терміну дії коду
+					gte: new Date(), // Check code expiration time
 				},
 			},
 		})
@@ -248,17 +248,16 @@ const recoveryConfirm = async (req: Request, res: Response) => {
 			return res.status(400).json({ msg: `Невірний код відновлення паролю або термін його дії закінчився` })
 		}
 
-		// Тут ви можете змінити пароль користувача
-		// Наприклад, використовуючи bcrypt для збереження хеша нового паролю:
+		// Update user password
 		const hashedPassword = await bcrypt.hash(newPassword, 10)
 
-		// Оновіть пароль у базі даних
+		// Update password in database
 		await prisma.user.update({
 			where: { id: user.id },
 			data: { password: hashedPassword },
 		})
 
-		// Видаляємо використаний код відновлення
+		// Delete used recovery code
 		await prisma.recoveryCode.delete({
 			where: {
 				id: savedCodeRecord.id,

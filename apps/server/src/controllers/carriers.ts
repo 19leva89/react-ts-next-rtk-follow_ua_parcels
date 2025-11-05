@@ -15,7 +15,7 @@ const getPaginatedData = (dataArray: any[], page: number, pageSize: number) => {
  */
 const all = async (req: Request, res: Response) => {
 	try {
-		const filePath = path.resolve(__dirname, './../src/utils/api-carrier.all.json')
+		const filePath = path.resolve(process.cwd(), 'src/utils/api-carrier.all.json')
 
 		const fileExists = await fs
 			.access(filePath)
@@ -30,8 +30,8 @@ const all = async (req: Request, res: Response) => {
 		const fileContent = await fs.readFile(filePath, 'utf-8')
 		const apiCarriers = JSON.parse(fileContent)
 
-		const page = parseInt(req.query.page) || 0
-		const pageSize = parseInt(req.query.pageSize) || 20
+		const page = typeof req.query.page === 'string' ? parseInt(req.query.page, 10) : 0
+		const pageSize = typeof req.query.pageSize === 'string' ? parseInt(req.query.pageSize, 10) : 20
 		const paginatedCarriers = getPaginatedData(apiCarriers, page, pageSize)
 
 		if (paginatedCarriers.length === 0) {
@@ -56,8 +56,10 @@ const all = async (req: Request, res: Response) => {
 			total_pages,
 		})
 	} catch (err) {
+		const errorMessage = err instanceof Error ? err.message : 'Невідома помилка'
+
 		return res.status(400).json({
-			msg: err.msg,
+			msg: errorMessage,
 		})
 	}
 }

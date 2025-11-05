@@ -118,9 +118,12 @@ const add = async (req: Request, res: Response) => {
 		}
 	} catch (err) {
 		console.error(err)
+
+		const errorMessage = err instanceof Error ? err.message : 'Невідома помилка'
+
 		return res.status(500).json({
 			msg: 'Помилка обробки запиту',
-			error: err.msg,
+			error: errorMessage,
 		})
 	}
 }
@@ -210,7 +213,7 @@ const remove = async (req: Request, res: Response) => {
 		}
 		const { number } = track
 
-		// Запит на API 17track.net
+		// Request to API 17track.net
 		const trackResponse = await axios.request({
 			method: 'POST',
 			url: 'https://api.17track.net/track/v2.2/deletetrack',
@@ -248,9 +251,12 @@ const remove = async (req: Request, res: Response) => {
 		}
 	} catch (err) {
 		console.error(err)
+
+		const errorMessage = err instanceof Error ? err.message : 'Невідома помилка'
+
 		res.status(500).json({
 			msg: 'Помилка обробки запиту',
-			error: err.msg,
+			error: errorMessage,
 		})
 	}
 }

@@ -16,10 +16,10 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0",
+    "@prisma/client": "^6.18.0",
     "@repo/ui": "workspace:*",
-    "axios": "^1.13.1",
-    "bcrypt": "^5.1.1",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "debug": "^2.6.9",
@@ -36,7 +36,7 @@
     "@types/express": "^5.0.5",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
-    "prisma": "^5.22.0",
+    "prisma": "^6.18.0",
     "typescript": "^5.9.3"
   }
 }

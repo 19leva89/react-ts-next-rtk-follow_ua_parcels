@@ -40,5 +40,18 @@ app.use((error: AppError, _req: Request, res: Response, _next: NextFunction) => 
 	return res.status(error.status || 500).json({ message: error.message || 'Inter Server Error!' })
 })
 
+if (process.env.NODE_ENV !== 'production') {
+	// For dev/local only: starting the server
+	const startServer = async () => {
+		const port = 8000
+
+		app.listen(port, () => {
+			console.log(`Product service is running on port ${port}`)
+		})
+	}
+
+	startServer()
+}
+
 // Export for Vercel/serverless
 export default app
