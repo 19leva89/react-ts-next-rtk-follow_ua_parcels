@@ -1,6 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 
-import { Paths } from '../../constants/paths'
+import { Paths } from '@/constants/paths'
 
 import logo from './logo-footer-v1-ua.svg'
 import './style.css'

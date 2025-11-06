@@ -1,10 +1,10 @@
-import { JSX } from 'react'
+import { ReactNode } from 'react'
 
 import { Loader } from '@/components/load'
 import { useCurrentQuery } from '@/services/auth'
 
 interface Props {
-	children: JSX.Element
+	children: ReactNode
 }
 
 export const Auth = ({ children }: Props) => {

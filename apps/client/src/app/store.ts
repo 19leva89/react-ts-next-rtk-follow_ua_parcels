@@ -17,7 +17,7 @@ export const store = configureStore({
 		return getDefaultMiddleware().concat(api.middleware).prepend(listenerMiddleware.middleware)
 	},
 
-	// Додаємо підтримку Redux DevTools, для відстеження та аналізу стану Redux-стейту
+	// Add support for Redux DevTools to track and analyze Redux state
 	devTools: process.env.NODE_ENV !== 'production',
 })
 

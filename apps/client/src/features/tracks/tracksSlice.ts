@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '@/app/store'
 import { tracksApi } from '@/services/tracks'
 
-interface InitialState {
+export interface InitialState {
 	tracks: Track[] | null
 	number: string
 }

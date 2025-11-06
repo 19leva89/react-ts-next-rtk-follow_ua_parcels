@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '@/app/store'
 import { authApi } from '@/services/auth'
 
-interface InitialState {
+export interface InitialState {
 	user: (User & { token: string; msg: string }) | null
 	isAuthenticated: boolean
 }

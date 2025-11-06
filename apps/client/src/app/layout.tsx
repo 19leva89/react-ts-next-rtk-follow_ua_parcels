@@ -7,8 +7,8 @@ import { PropsWithChildren } from 'react'
 import { store } from './store'
 import { Auth } from '@/features/auth/auth'
 
-import './styles/normalize.css'
-import './styles/main.css'
+import '@/styles/normalize.css'
+import '@/styles/main.css'
 
 const nunito = Nunito({
 	subsets: ['cyrillic'],

@@ -1,3 +1,5 @@
+'use client'
+
 import { Form } from 'antd'
 import Link from 'next/link'
 import { useState } from 'react'

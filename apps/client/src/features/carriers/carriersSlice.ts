@@ -4,7 +4,7 @@ import { RootState } from '@/app/store'
 import { carriersApi } from '@/services/carriers'
 import { Carrier, ListResponse } from '@/services/carriers'
 
-interface CarriersState {
+export interface CarriersState {
 	data: Carrier[]
 	currentPage: number
 	totalPages: number
