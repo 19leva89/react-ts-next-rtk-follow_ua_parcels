@@ -8,7 +8,7 @@ import { Paths } from '@/constants/paths'
 import { Field } from '@/components/field'
 import { ButtonAntd } from '@/components/button-antd'
 import { MsgResponse } from '@/components/msg-response'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { UserData, useRegisterConfirmMutation } from '@/services/auth'
 
 export const RegisterConfirmView = () => {

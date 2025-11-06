@@ -18,12 +18,7 @@ import { Loader } from '@/components/load'
 import { selectUser } from '@/features/auth/authSlice'
 import { MsgResponse } from '@/components/msg-response'
 import { ButtonDelete } from '@/components/button-delete'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
-
-import archiveIco from '@/img/tracks/archive-icon.svg'
-import plusIconBl from '@/img/tracks/plus-icon-bl.svg'
-import unarchiveIco from '@/img/tracks/unarchive-icon.svg'
-import hourglass100 from '@/img/tracks/hourglass-100-icon.svg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 
 export const TracksView = () => {
 	const router = useRouter()
@@ -45,7 +40,7 @@ export const TracksView = () => {
 	}, [router, user])
 
 	const [activeTab, setActiveTab] = useState<string>(() => {
-		// Використовуємо локальне сховище для отримання значення activeTab
+		// Use local storage to get the activeTab value
 		const storedActiveTab = localStorage.getItem('activeTab')
 		return storedActiveTab || 'myTracks'
 	})
@@ -164,7 +159,7 @@ export const TracksView = () => {
 						<div className='track__new'>
 							<Link href={Paths.trackAdd} className='button button__transparent actions__btn'>
 								<span className='track__new--icon'>
-									<img className='icon-img' src={plusIconBl} alt='Нова' height='14px' />
+									<img src='/svg/tracks/plus-icon-bl.svg' alt='Нова' height='14px' className='icon-img' />
 									Нова
 								</span>
 							</Link>
@@ -182,7 +177,7 @@ export const TracksView = () => {
 							<div className='track__item' key={key}>
 								<div className='icon'>
 									<img
-										src={`img/carrier/${carrier || 'undefined'}.png`}
+										src={`/img/carrier/${carrier || 'undefined'}.png`}
 										alt={name}
 										height='38px'
 										width='38px'
@@ -215,7 +210,7 @@ export const TracksView = () => {
 								<div className='actions'>
 									<Link href='#' className='button button__transparent actions__btn'>
 										<span className='actions__icon--hourglass'>
-											<img src={hourglass100} alt='Годинник' height='14px' />
+											<img src='/svg/tracks/hourglass-100-icon.svg' alt='Годинник' height='14px' />
 											<p>38</p>
 										</span>
 									</Link>
@@ -227,7 +222,11 @@ export const TracksView = () => {
 											type='submit'
 											title='Повернути із архіву'
 										>
-											<img className='track__number--img' src={unarchiveIco} alt='Unarchive' />
+											<img
+												src='/svg/tracks/unarchive-icon.svg'
+												alt='Unarchive'
+												className='track__number--img'
+											/>
 										</button>
 									) : (
 										<button
@@ -236,7 +235,7 @@ export const TracksView = () => {
 											type='submit'
 											title='Перемістити в архів'
 										>
-											<img className='track__number--img' src={archiveIco} alt='Archive' />
+											<img src='/svg/tracks/archive-icon.svg' alt='Archive' className='track__number--img' />
 										</button>
 									)}
 

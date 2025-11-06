@@ -12,11 +12,10 @@ import { Button } from '@/components/button'
 import { FieldTrack } from '@/components/field-track'
 import { MsgResponse } from '@/components/msg-response'
 import { useAddTrackMutation } from '@/services/tracks'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { logout, selectUser } from '@/features/auth/authSlice'
 import { selectTrackNumber, setTrackNumber } from '@/features/tracks/tracksSlice'
 
-import logo from './logo-v1-ua.svg'
 import './style.css'
 
 export const Header = () => {
@@ -72,19 +71,23 @@ export const Header = () => {
 		<header>
 			<section className='header'>
 				<Link href={Paths.home}>
-					<img className='header__logo' src={logo} alt='Follow UA Parcels - Best package tracking service' />
+					<img
+						src='/svg/logo-v1-ua.svg'
+						alt='Follow UA Parcels - Best package tracking service'
+						className='header__logo'
+					/>
 				</Link>
 
 				<div className='header__first-line'>
 					<Form onFinish={handleAddTrack}>
 						<div className='input__group'>
 							<FieldTrack
-								className='field__input field__input--track validation field__input--slim'
+								type='text'
 								name='trackNumber'
 								placeholder='RB191346302CN'
-								type='text'
 								value={trackNumber}
 								onChange={handleTrackNumberChange}
+								className='field__input field__input--track validation field__input--slim'
 							/>
 							<Button className='button header__btn header__btn--ua-parcels button__slim' type='submit'>
 								<span>Трек</span>

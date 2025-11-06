@@ -46,12 +46,12 @@ export const CarriersView = () => {
 
 							return (
 								<li key={id} className='carrier__item carrier__item--big'>
-									<Link href={url} className='carrier__name'>
-										<img src={`img/carrier/${id}.png`} width='70' alt={name} className='carrier__img' />
+									<Link href={url} target='_blank' rel='noopener noreferrer' className='carrier__name'>
+										<img src={`/img/carrier/${id}.png`} width='70' alt={name} className='carrier__img' />
 									</Link>
 
 									<div className='carrier__info'>
-										<Link href={url} className='carrier__name'>
+										<Link href={url} target='_blank' rel='noopener noreferrer' className='carrier__name'>
 											<span className='carrier__text'>{name}</span>
 										</Link>
 

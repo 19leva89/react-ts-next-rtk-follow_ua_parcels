@@ -1,6 +1,5 @@
 import { MouseEventHandler } from 'react'
 
-import Cross from './cross.svg'
 import './style.css'
 
 interface Props {
@@ -12,8 +11,8 @@ interface Props {
 
 export const ButtonDelete = ({ type, title, className, onClick }: Props) => {
 	return (
-		<button type={type} title={title} className={className} onClick={onClick}>
-			<img src={Cross} alt='Delete' />
+		<button type={type} title={title} onClick={onClick} className={className}>
+			<img src='/svg/cross.svg' alt='Delete' />
 		</button>
 	)
 }

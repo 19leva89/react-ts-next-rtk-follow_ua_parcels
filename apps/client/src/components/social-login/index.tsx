@@ -1,8 +1,5 @@
 import Link from 'next/link'
 
-import appleLogo from './apple-logo.svg'
-import googleLogo from './google-logo.svg'
-
 import './style.css'
 
 export const SocialLogin = () => {
@@ -12,11 +9,15 @@ export const SocialLogin = () => {
 
 			<p className='social__links'>
 				<Link href='/auth/oauth/google'>
-					<img className='social__button social__button--google' src={googleLogo} alt='Google' />
+					<img
+						src='/svg/auth/google-logo.svg'
+						alt='Google'
+						className='social__button social__button--google'
+					/>
 				</Link>
 
 				<Link href='/auth/oauth/apple'>
-					<img className='social__button social__button--apple' src={appleLogo} alt='Apple' />
+					<img src='/svg/auth/apple-logo.svg' alt='Apple' className='social__button social__button--apple' />
 				</Link>
 			</p>
 		</>

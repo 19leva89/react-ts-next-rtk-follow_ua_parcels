@@ -1,18 +1,20 @@
+'use client'
+
 import { ReactNode } from 'react'
 
 import { Loader } from '@/components/load'
 import { useCurrentQuery } from '@/services/auth'
 
 interface Props {
-	children: ReactNode
+    children: ReactNode
 }
 
 export const Auth = ({ children }: Props) => {
-	const { isLoading } = useCurrentQuery()
+    const { isLoading } = useCurrentQuery()
 
-	if (isLoading) {
-		return <Loader />
-	}
+    if (isLoading) {
+        return <Loader />
+    }
 
-	return children
+    return children
 }

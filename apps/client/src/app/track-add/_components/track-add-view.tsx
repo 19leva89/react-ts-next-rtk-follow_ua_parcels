@@ -12,7 +12,7 @@ import { ButtonAntd } from '@/components/button-antd'
 import { selectUser } from '@/features/auth/authSlice'
 import { useAddTrackMutation } from '@/services/tracks'
 import { MsgResponse } from '@/components/msg-response'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 
 export const TrackAddView = () => {
 	const router = useRouter()

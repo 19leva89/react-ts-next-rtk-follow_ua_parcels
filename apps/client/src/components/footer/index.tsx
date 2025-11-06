@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import { Paths } from '@/constants/paths'
 
-import logo from './logo-footer-v1-ua.svg'
 import './style.css'
 
 export const Footer = () => {
@@ -85,14 +84,17 @@ export const Footer = () => {
 				</div>
 
 				<div className='footer__copyright'>
-					<img src={logo} alt='Відстеження поштових відправлень та посилок Follow UA Parcels' />
+					<img
+						src='/svg/logo-footer-v1-ua.svg'
+						alt='Відстеження поштових відправлень та посилок Follow UA Parcels'
+					/>
 
 					<Link href='/support/contact-us' className='footer__item'>
 						Контакти
 					</Link>
 
 					<div className='footer__item'>
-						© <time dateTime='2024'>2024</time> Follow UA Parcels
+						© <time dateTime='2025'>2025</time> Follow UA Parcels
 					</div>
 				</div>
 			</div>

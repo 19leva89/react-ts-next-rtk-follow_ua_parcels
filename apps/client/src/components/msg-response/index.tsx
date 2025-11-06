@@ -1,8 +1,8 @@
+'use client'
+
 import { Alert } from 'antd'
 import { AlertProps } from 'antd/lib/alert'
 import { useEffect, useState } from 'react'
-
-import styles from './style.module.css'
 
 interface Props {
 	msg?: string

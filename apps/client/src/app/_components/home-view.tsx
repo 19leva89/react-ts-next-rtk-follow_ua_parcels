@@ -12,10 +12,8 @@ import { FieldTrack } from '@/components/field-track'
 import { MsgResponse } from '@/components/msg-response'
 import { useAddTrackMutation } from '@/services/tracks'
 import { useGetCarriersQuery } from '@/services/carriers'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { selectTrackNumber, setTrackNumber } from '@/features/tracks/tracksSlice'
-
-import logo from './../../img/logo-v1-ua.svg'
 
 export const HomeView = () => {
 	const dispatch = useDispatch()
@@ -68,7 +66,11 @@ export const HomeView = () => {
 			<section className='tracking'>
 				<h1 className='preform'>Глобальне відстеження посилок</h1>
 
-				<img className='main__logo' src={logo} alt='Follow UA Parcels - package delivery tracking service' />
+				<img
+					src='/svg/logo-v1-ua.svg'
+					alt='Follow UA Parcels - package delivery tracking service'
+					className='main__logo'
+				/>
 
 				<div className='tracking__form'>
 					<Form onFinish={handleAddTrack}>
@@ -113,7 +115,7 @@ export const HomeView = () => {
 					{carriers?.data.slice(0, 18).map(({ id, name, url }) => (
 						<li className='carrier__item' key={id}>
 							<Link href={url} className='carrier__name'>
-								<img src={`img/carrier/${id}.png`} width='24' alt={name} />
+								<img src={`/img/carrier/${id}.png`} width='24' alt={name} />
 								<span className='carrier__text'>{name}</span>
 							</Link>
 						</li>

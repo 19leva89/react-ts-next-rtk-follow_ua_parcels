@@ -10,7 +10,7 @@ import { Field } from '@/components/field'
 import { ButtonAntd } from '@/components/button-antd'
 import { selectUser } from '@/features/auth/authSlice'
 import { MsgResponse } from '@/components/msg-response'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { FieldPassword } from '@/components/field-password'
 import { useNewEmailMutation, useNewPasswordMutation } from '@/services/auth'
 

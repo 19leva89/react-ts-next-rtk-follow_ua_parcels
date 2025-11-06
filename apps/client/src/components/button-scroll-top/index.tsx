@@ -1,6 +1,7 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
-import scrollTop from './scroll_top.svg'
 import './style.css'
 
 interface Props {
@@ -40,8 +41,8 @@ export const ButtonScrollTop = ({ className }: Props) => {
 	return (
 		<>
 			{showButton && (
-				<button type='button' className={className} onClick={scrollToTop}>
-					<img src={scrollTop} alt='Scroll top' />
+				<button type='button' onClick={scrollToTop} className={className}>
+					<img src='/svg/scroll_top.svg' alt='Scroll top' />
 				</button>
 			)}
 		</>

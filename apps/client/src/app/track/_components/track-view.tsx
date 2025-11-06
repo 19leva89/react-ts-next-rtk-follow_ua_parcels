@@ -9,16 +9,8 @@ import { Paths } from '@/constants/paths'
 import { Loader } from '@/components/load'
 import { selectUser } from '@/features/auth/authSlice'
 import { MsgResponse } from '@/components/msg-response'
-import { isErrorWithMsg } from '@/utils/is-error-with-msg'
+import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { useEditTrackMutation, useGetTrackQuery } from '@/services/tracks'
-
-import editIco from '@/img/tracks/edit-icon.svg'
-import copyIco from '@/img/tracks/copy-icon.svg'
-import saveIco from '@/img/tracks/save-icon.svg'
-import cancelIco from '@/img/tracks/cancel-icon.svg'
-import circleIcon from '@/img/tracks/circle-icon.svg'
-import squareIcon from '@/img/tracks/square-icon.svg'
-import saveGreenIco from '@/img/tracks/save-green-icon.svg'
 
 export const TrackView = () => {
 	const params = useParams<{ id: string }>()
@@ -52,7 +44,7 @@ export const TrackView = () => {
 			await navigator.clipboard.writeText(data.number)
 			setCopySuccess(true)
 
-			// Сховати повідомлення "Скопійовано!" через 2 секунди
+			// Hide "Copied!" message after 2 seconds
 			setTimeout(() => {
 				setCopySuccess(false)
 			}, 2000)
@@ -151,13 +143,13 @@ export const TrackView = () => {
 						<div className='track__number'>
 							<h1>Відправлення: {data.number}</h1>
 							<img
-								className='track__number--img'
-								src={copyIco}
+								src='/svg/tracks/copy-icon.svg'
 								alt='Copy'
-								onClick={handleCopyClick}
 								title='Копіювати трек-номер'
+								onClick={handleCopyClick}
+								className='track__number--img'
 							/>
-							{copySuccess && <img src={saveGreenIco} alt='Save' />}
+							{copySuccess && <img src='/svg/tracks/save-green-icon.svg' alt='Save' />}
 						</div>
 
 						<div className='track__title'>
@@ -165,36 +157,36 @@ export const TrackView = () => {
 								<>
 									<h2 className='track__subtitle'>Назва:</h2>
 									<input
-										className='field__input field__input--slim field__input--narrow'
 										name='name'
 										type='text'
 										value={editedName || ''}
 										onChange={(e) => setEditedName(e.target.value)}
+										className='field__input field__input--slim field__input--narrow'
 									/>
 									<img
-										className='track__number--img'
-										src={saveIco}
+										title='Зберегти'
+										src='/svg/tracks/save-icon.svg'
 										alt='Save'
 										onClick={handleSaveClick}
-										title='Зберегти'
+										className='track__number--img'
 									/>
 									<img
-										className='track__number--img'
-										src={cancelIco}
+										title='Скасувати'
+										src='/svg/tracks/cancel-icon.svg'
 										alt='Cancel'
 										onClick={handleCancelClick}
-										title='Скасувати'
+										className='track__number--img'
 									/>
 								</>
 							) : (
 								<>
 									<h2 className='track__subtitle'>Назва: {data.name}</h2>
 									<img
-										className='track__number--img'
-										src={editIco}
+										title='Редагувати назву'
+										src='/svg/tracks/edit-icon.svg'
 										alt='Edit'
 										onClick={handleEditClick}
-										title='Редагувати назву'
+										className='track__number--img'
 									/>
 								</>
 							)}
@@ -216,7 +208,7 @@ export const TrackView = () => {
 						<div className='track__history--item'>
 							<div>
 								<div className='track__history--line-first'></div>
-								<img className='track__history--icon' src={circleIcon} alt='Circle' />
+								<img src='/svg/tracks/circle-icon.svg' alt='Circle' className='track__history--icon' />
 								<div className='track__history--line'></div>
 							</div>
 
@@ -242,7 +234,7 @@ export const TrackView = () => {
 						<div className='track__history--item '>
 							<div>
 								<div className='track__history--line track__history--line-last'></div>
-								<img className='track__history--icon' src={squareIcon} alt='Square' />
+								<img src='/svg/tracks/square-icon.svg' alt='Square' className='track__history--icon' />
 								<div className='track__history--line track__history--line-last'></div>
 							</div>
 
