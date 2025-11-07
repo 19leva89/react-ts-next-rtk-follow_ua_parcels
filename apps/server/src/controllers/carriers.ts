@@ -1,6 +1,7 @@
-import path from 'path'
-import fs from 'fs/promises'
 import { Request, Response } from 'express'
+
+import { CarrierRaw } from '../types/carrier.js'
+import apiCarriersData from '../utils/api-carrier.all.json' with { type: 'json' }
 
 const getPaginatedData = (dataArray: any[], page: number, pageSize: number) => {
 	const start = page * pageSize
@@ -13,22 +14,9 @@ const getPaginatedData = (dataArray: any[], page: number, pageSize: number) => {
  * @desc Get all carriers
  * @access Public
  */
-const all = async (req: Request, res: Response) => {
+const all = (req: Request, res: Response) => {
 	try {
-		const filePath = path.resolve(process.cwd(), 'src/utils/api-carrier.all.json')
-
-		const fileExists = await fs
-			.access(filePath)
-			.then(() => true)
-			.catch(() => false)
-		if (!fileExists) {
-			return res.status(404).json({
-				msg: 'File not found',
-			})
-		}
-
-		const fileContent = await fs.readFile(filePath, 'utf-8')
-		const apiCarriers = JSON.parse(fileContent)
+		const apiCarriers = apiCarriersData as CarrierRaw[]
 
 		const page = typeof req.query.page === 'string' ? parseInt(req.query.page, 10) : 0
 		const pageSize = typeof req.query.pageSize === 'string' ? parseInt(req.query.pageSize, 10) : 20
