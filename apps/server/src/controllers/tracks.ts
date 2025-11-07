@@ -1,7 +1,6 @@
 import axios from 'axios'
+import { prisma } from '@repo/parcels-db'
 import { Request, Response } from 'express'
-
-import { prisma } from '../utils/client.js'
 
 /**
  * @route GET /api/tracks

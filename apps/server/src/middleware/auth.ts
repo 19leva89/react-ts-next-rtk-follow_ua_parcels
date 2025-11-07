@@ -1,7 +1,6 @@
+import { prisma } from '@repo/parcels-db'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import { NextFunction, Request, Response } from 'express'
-
-import { prisma } from '../utils/client.js'
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
 	try {

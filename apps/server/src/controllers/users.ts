@@ -1,9 +1,8 @@
 import bcrypt from 'bcrypt'
 import crypto from 'crypto'
 import jwt from 'jsonwebtoken'
+import { prisma } from '@repo/parcels-db'
 import { Request, Response } from 'express'
-
-import { prisma } from '../utils/client.js'
 
 /**
  * @route POST /api/user/login
