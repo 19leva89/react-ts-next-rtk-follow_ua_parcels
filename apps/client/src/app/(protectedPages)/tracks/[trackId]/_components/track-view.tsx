@@ -2,8 +2,8 @@
 
 import { Flex } from 'antd'
 import { useSelector } from 'react-redux'
+import { redirect } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { useParams, redirect } from 'next/navigation'
 
 import { Paths } from '@/constants/paths'
 import { Loader } from '@/components/load'
@@ -12,8 +12,7 @@ import { MsgResponse } from '@/components/msg-response'
 import { isErrorWithMsg } from '@/lib/is-error-with-msg'
 import { useEditTrackMutation, useGetTrackQuery } from '@/services/tracks'
 
-export const TrackView = () => {
-	const params = useParams<{ id: string }>()
+export const TrackView = ({ trackId }: { trackId: string }) => {
 	const user = useSelector(selectUser)
 
 	const [editTrack] = useEditTrackMutation()
@@ -23,7 +22,7 @@ export const TrackView = () => {
 	const [copySuccess, setCopySuccess] = useState<boolean>(false)
 	const [msgType, setMsgType] = useState<'success' | 'info' | 'warning' | 'error' | undefined>('info')
 
-	const { data, isLoading, refetch } = useGetTrackQuery(params.id || '')
+	const { data, isLoading, refetch } = useGetTrackQuery(trackId)
 
 	useEffect(() => {
 		if (!user) {
