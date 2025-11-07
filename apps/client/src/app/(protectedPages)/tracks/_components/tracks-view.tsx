@@ -168,8 +168,8 @@ export const TracksView = () => {
 				</div>
 
 				<div className='track__list'>
-					{data.map(({ id, userId, number, carrier, name, createDate, archived }) => {
-						const track = { id, userId, number, carrier, name, createDate, archived }
+					{data.map(({ id, userId, number, carrier, name, createdAt, updatedAt, archived }) => {
+						const track = { id, userId, number, carrier, name, createdAt, updatedAt, archived }
 						const key = `${id}-${userId}`
 
 						return (activeTab === 'myTracks' && !archived) ||
