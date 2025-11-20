@@ -1,23 +1,24 @@
-import { PrismaClient } from '../generated/prisma/index.js'
+import 'dotenv/config'
+import { PrismaMariaDb } from '@prisma/adapter-mariadb'
+
+import { PrismaClient } from '../generated/prisma/client'
 
 const prismaClientSingleton = () => {
 	const isVercel = process.env.VERCEL === '1'
 	const isProduction = process.env.NODE_ENV === 'production'
 
-	let databaseUrl = process.env.DATABASE_URL
+	let databaseUrl = process.env.DATABASE_URL!
 
 	if (isProduction) {
 		// Use connection pool if available
 		const connectionLimit = isVercel ? 1 : 5 // Fewer connections for serverless
-		databaseUrl = `${process.env.DATABASE_URL}&connection_limit=${connectionLimit}&pool_timeout=10`
+		databaseUrl = `${process.env.DATABASE_URL}&connection_limit=${connectionLimit}&pool_timeout=10`!
 	}
 
+	const adapter = new PrismaMariaDb(databaseUrl)
+
 	const prisma = new PrismaClient({
-		datasources: {
-			db: {
-				url: databaseUrl,
-			},
-		},
+		adapter,
 		log: isProduction ? ['warn', 'error'] : ['info', 'warn', 'error'],
 	})
 
