@@ -18,17 +18,21 @@
       "cache": false,
       "persistent": true
     },
-    "db:generate": {
+    "generate": {
+      "dependsOn": ["^generate"],
+      "cache": false
+    },
+    "db:migrate:dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:migrate:deploy": {
       "cache": false
     },
     "db:push": {
       "cache": false
     },
-    "db:migrate": {
-      "cache": false,
-      "persistent": true
-    },
-    "db:deploy": {
+    "db:seed": {
       "cache": false
     }
   }

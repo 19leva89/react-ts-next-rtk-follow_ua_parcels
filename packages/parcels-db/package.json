@@ -3,29 +3,29 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "prisma studio",
-    "build": "tsc",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev --skip-generate",
-    "db:deploy": "prisma migrate deploy",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "format": "prisma format",
+    "generate": "prisma generate",
+    "lint": "eslint . --max-warnings 0",
+    "prebuild": "npm run generate",
+    "predev": "npm run generate",
+    "studio": "prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.0"
+    "@prisma/adapter-mariadb": "^7.0.0",
+    "@prisma/client": "^7.0.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "prisma": "^6.19.0",
+    "dotenv": "^17.2.3",
+    "prisma": "^7.0.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts",
-			"client": "./generated/prisma/index.js"
-    }
+    ".": "./src/index.ts"
   }
 }
