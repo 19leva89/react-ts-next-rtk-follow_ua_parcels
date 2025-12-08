@@ -15,18 +15,18 @@
       "dependsOn": ["^check-types"]
     },
     "dev": {
-			"dependsOn": ["^db:generate"],
+      "dependsOn": ["^db:generate"],
       "cache": false,
       "persistent": true
     },
     "db:generate": {
       "cache": false
     },
-    "db:migrate:dev": {
+    "db:migrate": {
       "cache": false,
       "persistent": true
     },
-    "db:migrate:deploy": {
+    "db:deploy": {
       "cache": false
     },
     "db:push": {
