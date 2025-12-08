@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "db:generate": "prisma generate",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "format": "prisma format",
-    "generate": "prisma generate",
     "lint": "eslint . --max-warnings 0",
     "studio": "prisma studio",
     "postinstall": "prisma generate"
