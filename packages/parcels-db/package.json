@@ -11,17 +11,17 @@
     "generate": "prisma generate",
     "lint": "eslint . --max-warnings 0",
     "studio": "prisma studio",
-		"postinstall": "prisma generate"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@prisma/adapter-mariadb": "^7.0.0",
-    "@prisma/client": "^7.0.0"
+    "@prisma/adapter-mariadb": "^7.1.0",
+    "@prisma/client": "^7.1.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "dotenv": "^17.2.3",
-    "prisma": "^7.0.0",
-    "tsx": "^4.20.6",
+    "prisma": "^7.1.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
   "exports": {

@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
-    "@reduxjs/toolkit": "^2.10.1",
+    "@reduxjs/toolkit": "^2.11.1",
     "@repo/parcels-db": "workspace:*",
     "@repo/ui": "workspace:*",
     "antd": "^5.29.1",
     "i18n-iso-countries": "^7.14.0",
-    "next": "^16.0.3",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-paginate": "^8.3.0",
     "react-redux": "^9.2.0",
     "sass": "^1.94.2"
