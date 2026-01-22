@@ -32,7 +32,11 @@ const all = async (req: Request, res: Response) => {
  */
 const track = async (req: Request, res: Response) => {
 	try {
-		const { id } = req.params
+		const idRaw = req.params.id
+		const id = Array.isArray(idRaw) ? idRaw[0] : idRaw
+		if (!id) {
+			return res.status(400).json({ msg: 'Не вказано id' })
+		}
 
 		if (!req.user) {
 			return res.status(401).json({ msg: 'Користувач не автентифікований' })
@@ -202,7 +206,8 @@ const restore = async (req: Request, res: Response) => {
  */
 const remove = async (req: Request, res: Response) => {
 	try {
-		const { id } = req.params
+		const idRaw = req.params.id
+		const id = Array.isArray(idRaw) ? idRaw[0] : idRaw
 		if (!id) {
 			return res.status(400).json({ msg: 'Не вказано id' })
 		}

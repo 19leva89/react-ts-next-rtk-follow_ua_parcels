@@ -1,6 +1,5 @@
+import 'dotenv/config'
 import { defineConfig, env } from 'prisma/config'
-
-console.log('DATABASE_URL present:', !!process.env.DATABASE_URL)
 
 export default defineConfig({
 	schema: 'prisma/schema.prisma',
