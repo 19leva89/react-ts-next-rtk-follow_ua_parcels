@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { PrismaMariaDb } from '@prisma/adapter-mariadb'
 
-import { PrismaClient } from './generated/prisma/client'
+import { PrismaClient } from './generated/prisma/client.js'
 
 const prismaClientSingleton = () => {
 	const isVercel = process.env.VERCEL === '1'
