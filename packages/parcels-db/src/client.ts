@@ -73,5 +73,3 @@ process.on('unhandledRejection', async (reason, promise) => {
 	await prisma.$disconnect()
 	process.exit(1)
 })
-
-export type { ConfirmCode, RecoveryCode, Track, TrackInfo, User } from '../generated/prisma/client'

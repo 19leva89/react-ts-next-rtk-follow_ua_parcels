@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev --skip-generate",
     "db:deploy": "prisma migrate deploy",
@@ -26,6 +27,6 @@
     "typescript": "^5.9.3"
   },
   "exports": {
-    ".": "./src/client.ts"
+    ".": "./dist/src/index.js"
   }
 }
