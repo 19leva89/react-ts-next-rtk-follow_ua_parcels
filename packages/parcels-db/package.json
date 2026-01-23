@@ -13,7 +13,7 @@
     "format": "prisma format",
     "lint": "eslint . --max-warnings 0",
     "studio": "prisma studio",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate && pnpm run build"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.3.0",
