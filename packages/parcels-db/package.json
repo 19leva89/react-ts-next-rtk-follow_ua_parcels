@@ -2,10 +2,7 @@
   "name": "@repo/parcels-db",
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev --skip-generate",
     "db:deploy": "prisma migrate deploy",
@@ -15,7 +12,7 @@
     "format": "prisma format",
     "lint": "eslint . --max-warnings 0",
     "studio": "prisma studio",
-    "postinstall": "prisma generate && pnpm build"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.3.0",
@@ -29,11 +26,6 @@
     "typescript": "^5.9.3"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
+    ".": "./src/index.ts"
   }
 }
