@@ -3,10 +3,10 @@
 import { Form } from 'antd'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Track } from '@repo/parcels-db'
 import { useDispatch, useSelector } from 'react-redux'
 import { usePathname, useRouter } from 'next/navigation'
 
+import { Track } from '@/types'
 import { Paths } from '@/constants/paths'
 import { Button } from '@/components/button'
 import { FieldTrack } from '@/components/field-track'

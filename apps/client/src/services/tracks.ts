@@ -1,6 +1,5 @@
-import { Track } from '@repo/parcels-db'
-
 import { api } from './api'
+import { Track } from '@/types'
 
 export type TrackData = Omit<Track, 'id'>
 type ResponseData = Track & { msg: string }

@@ -1,6 +1,6 @@
-import { User } from '@repo/parcels-db'
 import { createSlice } from '@reduxjs/toolkit'
 
+import { User } from '@/types'
 import { RootState } from '@/app/store'
 import { authApi } from '@/services/auth'
 

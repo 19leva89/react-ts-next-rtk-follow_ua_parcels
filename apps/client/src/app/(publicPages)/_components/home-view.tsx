@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { Form } from 'antd'
-import { Track } from '@repo/parcels-db'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { Track } from '@/types'
 import { Paths } from '@/constants/paths'
 import { Button } from '@/components/button'
 import { FieldTrack } from '@/components/field-track'

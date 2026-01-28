@@ -1,11 +1,11 @@
 'use client'
 
 import { Card, Flex, Form } from 'antd'
-import { Track } from '@repo/parcels-db'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import { Track } from '@/types'
 import { Paths } from '@/constants/paths'
 import { Field } from '@/components/field'
 import { ButtonAntd } from '@/components/button-antd'

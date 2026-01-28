@@ -3,7 +3,7 @@
   "ui": "stream",
   "tasks": {
     "build": {
-      "dependsOn": ["^db:generate", "^build"],
+      "dependsOn": ["^build", "^db:generate"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"],
       "env": ["NODE_ENV", "JWT_SECRET", "API_KEY_17TRACK", "DATABASE_URL", "VERCEL", "NETLIFY", "PORT", "VERCEL_PROJECT_PRODUCTION_URL", "NEXTAUTH_URL"]
@@ -15,11 +15,11 @@
       "dependsOn": ["^check-types"]
     },
     "dev": {
-      "dependsOn": ["^db:generate"],
       "cache": false,
       "persistent": true
     },
     "db:generate": {
+      "dependsOn": ["^db:generate"],
       "cache": false,
       "env": ["DATABASE_URL"]
     },

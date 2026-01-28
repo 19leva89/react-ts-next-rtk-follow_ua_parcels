@@ -1,6 +1,5 @@
-import { User } from '@repo/parcels-db'
-
 import { api } from './api'
+import { User } from '@/types'
 
 export type UserData = Omit<User, 'id'>
 export type RegisterData = Omit<User, 'id'> & { confirmPassword: string }

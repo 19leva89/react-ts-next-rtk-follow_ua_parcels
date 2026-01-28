@@ -1,6 +1,6 @@
-import { Track } from '@repo/parcels-db'
 import { createSlice } from '@reduxjs/toolkit'
 
+import { Track } from '@/types'
 import { RootState } from '@/app/store'
 import { tracksApi } from '@/services/tracks'
 

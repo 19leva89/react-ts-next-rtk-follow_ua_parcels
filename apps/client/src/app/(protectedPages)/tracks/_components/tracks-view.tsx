@@ -2,7 +2,6 @@
 
 import { Flex } from 'antd'
 import Link from 'next/link'
-import { Track } from '@repo/parcels-db'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -13,6 +12,7 @@ import {
 	useRemoveTrackMutation,
 	useRestoreTrackMutation,
 } from '@/services/tracks'
+import { Track } from '@/types'
 import { Paths } from '@/constants/paths'
 import { Loader } from '@/components/load'
 import { selectUser } from '@/features/auth/authSlice'
