@@ -1,13 +1,15 @@
 {
   "name": "@repo/parcels-db",
   "version": "1.0.0",
+	"type": "module",
   "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
     "db:generate": "prisma generate",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
-    "dev": "tsup src/* --watch",
+    "dev": "pnpm run build && tsup src/index.ts --format esm --watch",
     "format": "prisma format",
     "lint": "eslint . --max-warnings 0",
     "prebuild": "npm run db:generate",
@@ -28,7 +30,8 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
+	"main": "./dist/index.js",
   "exports": {
-    ".": "./src/client.ts"
+    ".": "./dist/index.js"
   }
 }
