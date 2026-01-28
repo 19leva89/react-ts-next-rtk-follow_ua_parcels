@@ -1,7 +1,7 @@
 {
   "name": "@repo/parcels-db",
   "version": "1.0.0",
-	"type": "module",
+  "type": "module",
   "scripts": {
     "build": "tsup src/client.ts --format esm --dts",
     "db:generate": "prisma generate",
@@ -29,7 +29,7 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
-	"main": "./dist/client.js",
+  "main": "./dist/client.js",
   "exports": {
     ".": "./dist/client.js"
   }
